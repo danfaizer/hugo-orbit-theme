@@ -1,0 +1,11 @@
+            <section class="section tooling-section">
+                <h2 class="section-title"><i class="fa {{ .Site.Params.tooling.icon }}"></i>{{ i18n "tooling" }}</h2>
+                <div class="intro">
+                    <p>{{ with .Site.Params.tooling.intro }}{{ . | markdownify }}{{ end }}</p>
+                </div><!--//intro-->
+				{{ range .Site.Params.tooling.list }}
+                <div class="item">
+                    <span class="project-title"><a {{ if .url }}href="{{ .url }}"{{ end }}>{{ .title }}</a></span><br><span class="project-tagline">{{ with .tagline }}{{ . | markdownify }}{{ end }}</span>
+                </div><!--//item-->
+				{{ end }}
+            </section><!--//section-->
